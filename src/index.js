@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 5000;
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://havancuong07122003_db_user:DwUIitdz1qcO5KQS@learnchinese.nmqiryl.mongodb.net/';
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: process.env.CLIENT_URL || 'https://learn-chinese-fe.vercel.app', 
   credentials: true
 }));
 app.use(express.json());
