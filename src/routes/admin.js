@@ -2,7 +2,7 @@ import express from 'express';
 import multer from 'multer';
 import path from 'path';
 import { authenticate, requireAdmin } from '../middleware/auth.js';
-import { parseVocabularyExcel, parseReadingUnitsExcel } from '../utils/excelParser.js';
+import { parseVocabularyExcel, parseReadingUnitsExcel, parseSentencesExcel } from '../utils/excelParser.js';
 import ImportLog from '../models/ImportLog.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -53,6 +53,8 @@ router.post(
         result = await parseVocabularyExcel(req.file.path, mode);
       } else if (fileType === 'reading-units') {
         result = await parseReadingUnitsExcel(req.file.path, mode);
+      } else if (fileType === 'sentences') {
+        result = await parseSentencesExcel(req.file.path, mode);
       } else {
         return res.status(400).json({ error: 'Loại file không được hỗ trợ' });
       }

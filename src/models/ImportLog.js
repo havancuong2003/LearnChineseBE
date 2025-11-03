@@ -8,7 +8,7 @@ const ImportLogSchema = new mongoose.Schema(
     },
     fileType: {
       type: String,
-      enum: ['vocabulary', 'reading-units', 'lessons'],
+      enum: ['vocabulary', 'reading-units', 'lessons', 'sentences'],
       required: true
     },
     mode: {

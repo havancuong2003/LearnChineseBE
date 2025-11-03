@@ -21,7 +21,8 @@ const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://havancuong07122003
 // Middleware
 app.use(cors({
   //origin: process.env.CLIENT_URL || 'https://learn-chinese-fe.vercel.app', 
-  origin: 'https://learn-chinese-fe.vercel.app',
+  // a array of origins
+  origin: ['https://learn-chinese-fe.vercel.app', 'http://localhost:5173'],
   credentials: true
 }));
 app.use(express.json());
